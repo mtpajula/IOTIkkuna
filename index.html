@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IOT Ikkuna</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- datetime picker -->
+    <link href="css/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IOT Ikkuna</a>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div id="tableMenu" class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link apicall" href="#get.table.status">
+                  <span data-feather="check"></span>
+                  status
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link apicall" href="#get.table.device">
+                  <span data-feather="cpu"></span>
+                  device
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link apicall" href="#get.table.message">
+                  <span data-feather="message-square"></span>
+                  message
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link apicall" href="#get.table.schedule">
+                  <span data-feather="clock"></span>
+                  schedule
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link apicall" href="#get.table.command">
+                  <span data-feather="send"></span>
+                  command
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Status graphs</span>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link apicall" href="#get.chart.status.fmitemp.temp.25">
+                  <span data-feather="file-text"></span>
+                  fmitemp day
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link apicall" href="#get.chart.status.fmitemp.temp.168">
+                  <span data-feather="file-text"></span>
+                  fmitemp week
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <h1 id="mainTitle" class="h2">...</h1>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <button id="newButton" data-toggle="modal" data-target="#newModal" class="btn btn-sm btn-outline-secondary">
+                <span data-feather="plus-circle"></span>
+                New
+              </button>
+            </div>
+          </div>
+
+          <canvas class="my-4" id="myChart"></canvas>
+
+
+          <div class="table-responsive">
+            <table id="dataTable" class="table table-striped table-sm">
+
+              <thead>
+                <tr>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="newModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="modalTitle" class="modal-title">New row</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="newModalForm">
+                <div id="startForm" class="form-group">
+                    <label for="start-name" class="col-form-label">start</label>
+                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="newSaveButton" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript
+    ================================================== -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="js/tempusdominus-bootstrap-4.min.js"></script>
+
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+    <!-- Ikkuna -->
+    <script src="js/apicall.js"></script>
+  </body>
+</html>
