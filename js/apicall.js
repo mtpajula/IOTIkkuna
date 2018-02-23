@@ -92,7 +92,7 @@ function setTbody(data, table) {
     for (var k in data[d]) {
         if (k == "start") {
             var mom = moment.unix(data[d][k]);
-            mom.locale('fi');
+            mom.locale(LOCALE);
             str += "<td>"+mom.format('lll')+"</td>";
         } else {
             str += "<td>"+data[d][k]+"</td>";
@@ -176,7 +176,7 @@ function setChart(data, device, key, amount) {
     ds.push(JSON.parse(sdata[s].payload).status[key]);
     ls.push(sdata[s].time);
   }
-  
+
   drawChart(ls, ds);
 };
 
