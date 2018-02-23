@@ -1,4 +1,4 @@
-# IOTIkkuna
+# iot -ikkuna
 UI for managing iot-system
 ## Install
 
