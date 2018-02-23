@@ -1,5 +1,17 @@
 # IOTIkkuna
 UI for managing iot-system
+## Install
+
+ 1. clone to your www/html -folder
+ 2. Set your iot-api -address and locale in js/apicall.js
+ 
+apicall.js:
+
+    // ==================================
+    // SETTINGS
+    var APIADDR    = "/api/api.php/";
+    var LOCALE     = "fi";
+    // ==================================
 
 ## Credits
 
